@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Frontend Mentor</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <section class="container">
+    <h1 class="title">Our Pricing</h1>
+
+    <div class="time-toggler">
+      <p>Annually</p>
+      <div class="toggle">
+        <div class="circle"></div>
+      </div>
+      <p>Monthly</p>
+    </div>
+
+    <div class="cards-wrapper">
+
+      <div class="card basic">
+        <p class="type">Basic</p>
+        <p class="price"><span>&dollar;</span>199.99</p>
+
+        <div class="specifications">
+          <p>500 GB Storage</p>
+          <p>2 Users Allowed</p>
+          <p>Send up to 3 GB</p>
+        </div>
+
+        <button class="learn-more">Learn More</button>
+      </div>
+
+      <div class="card professional">
+        <p class="type">Professional</p>
+        <p class="price"><span>&dollar;</span>249.99</p>
+
+        <div class="specifications">
+          <p>1 TB Storage</p>
+          <p>5 Users Allowed</p>
+          <p>Send up to 10 GB</p>
+        </div>
+
+        <button class="learn-more">Learn More</button>
+      </div>
+
+      <div class="card master">
+        <p class="type">Master</p>
+        <p class="price"><span>&dollar;</span>399.99</p>
+
+        <div class="specifications">
+          <p>2 TB Storage</p>
+          <p>10 Users Allowed</p>
+          <p>Send up to 20 GB</p>
+        </div>
+
+        <button class="learn-more">Learn More</button>
+      </div>
+
+    </div>
+
+  </section>
+
+<script>
+  const toggle = document.querySelector('.toggle')
+  const prices = document.querySelectorAll('.price');
+  const monthlyPrices = [19.99, 24.99, 39.99]
+  const anualPrices = [199.99, 249.99, 399.99]
+
+  toggle.addEventListener('click', ()=>{
+    toggle.classList.toggle('active');
+
+    if(toggle.classList.contains('active')){
+      prices.forEach((price, i) => {
+      price.innerHTML = `<span>&dollar;</span>${monthlyPrices[i]}`
+      })
+    }
+    else{
+      prices.forEach((price, i) => {
+      price.innerHTML = `<span>&dollar;</span>${anualPrices[i]}`
+      })
+    }
+  });
+</script>
+</body>
+</html>
